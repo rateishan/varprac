@@ -8,8 +8,8 @@ root.title('Buttons')
 root.geometry('300x200')
 root.iconbitmap('mars.ico')
 
-def button_fun(n1,n2):
-    sum= n1+n2
+def button_fun(n1,n3):
+    sum= n1+n3
     answer.set(f'answer is {sum}')
 
 
