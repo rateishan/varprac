@@ -9,7 +9,11 @@ root.geometry('800x400')
 root.iconbitmap('mars.ico')
 root.resizable(True,True)
 
-table=ttk.Treeview(root)
+table=ttk.Treeview(root, columns=('num1', 'num2', 'answer'), show='headings')
+table.heading('num1', text='Number1')
+table.heading('num2', text='Number2')
+table.heading('answer', text='Answer')
+
 table.pack()
 table.place(x=150,y=50)
 
