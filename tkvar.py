@@ -18,25 +18,20 @@ table.column('answer', anchor=tk.CENTER)
 table.pack()
 table.place(x=150,y=50)
 
+num1=tk.IntVar()
+num2=tk.IntVar()
+answer =tk.StringVar()
+
+
 def button_fun(n1,n2):
     sum= n1+n2
     answer.set(f'{sum}')
 
 
 def entry_value():
-    try:
-        table.insert('', 'end', values=(num1.get(), num2.get(), answer.get()))
+        table.insert('', 'end', values=(num1.get(), num2.get(),answer.get()))
         num1.set('')
         num2.set('')
-    except ValueError:
-        window=tk.Tk()
-        window.withdraw()
-        messagebox.showerror("Error", "Please enter the number")
-        window.destroy()
-
-num1=tk.IntVar()
-num2=tk.IntVar()
-answer =tk.StringVar()
 
 entry1=tk.Entry(root , textvariable=num1)
 entry1.pack()
@@ -51,8 +46,8 @@ label.pack()
 label.place(x=10,y=100)
 
 
-button=ttk.Button(root, text="Click", command=lambda :[button_fun(num1.get(), num2.get()),entry_value()])
-button.bind('<Return>',entry_value)
+button=ttk.Button(root, text="Click", command=lambda :button_fun[(num1.get(), num2.get()),entry_value()])
+button.bind("<Return>",lambda event :entry_value())
 button.pack()
 button.place(x=10,y=70)
 
